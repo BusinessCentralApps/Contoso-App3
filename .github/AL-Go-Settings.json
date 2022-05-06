@@ -1,4 +1,7 @@
 {
     "type":  "PTE",
-    "templateUrl":  "https://github.com/freddydk/AL-Go-PTE@main"
+    "templateUrl":  "https://github.com/freddydk/AL-Go-PTE@main",
+    "runs-on":  "self-hosted",
+    "updateDependencies":  true,
+    "bcContainerHelperVersion":  "dev"
 }
