@@ -3,5 +3,10 @@
     "templateUrl":  "https://github.com/freddydk/AL-Go-PTE@main",
     "runs-on":  "self-hosted",
     "updateDependencies":  true,
-    "bcContainerHelperVersion":  "dev"
+    "bcContainerHelperVersion":  "dev",
+    "Environments": [ 
+        "PROD_DE (Production)",
+        "FAT_DE (FAT)",
+        "QA_DE"
+    ]
 }
