@@ -12,7 +12,7 @@ defaults:
 
 jobs:
   Initialization:
-    runs-on: [ self-hosted ]
+    runs-on: [ bc-build ]
     outputs:
       telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
       settings: ${{ steps.ReadSettings.outputs.SettingsJson }}
@@ -38,7 +38,7 @@ jobs:
 
   Build:
     needs: [ Initialization ]
-    runs-on: [ self-hosted ]
+    runs-on: [ bc-build ]
     strategy:
       matrix:
         project: ${{ fromJson(needs.Initialization.outputs.projects) }}
@@ -113,7 +113,7 @@ jobs:
 
   PostProcess:
     if: always()
-    runs-on: [ self-hosted ]
+    runs-on: [ bc-build ]
     needs: [ Initialization, Build ]
     steps:
       - name: Checkout
