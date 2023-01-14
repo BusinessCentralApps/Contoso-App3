@@ -1,4 +1,4 @@
-name: 'Create a new test app'
+name: 'Create a new performance test app'
 
 on:
   workflow_dispatch:
@@ -10,7 +10,7 @@ on:
       name:
         description: Name
         required: true
-        default: '<YourAppName>.Test'         
+        default: '<YourAppName>.PerformanceTest'         
       publisher:
         description: Publisher
         required: true
@@ -20,6 +20,10 @@ on:
         default: '50000..99999'  
       sampleCode:
         description: Include Sample code (Y/N)
+        required: false
+        default: 'Y'
+      sampleSuite:
+        description: Include Sample BCPT Suite (Y/N)
         required: false
         default: 'Y'
       directCommit:
@@ -36,7 +40,7 @@ defaults:
     shell: powershell
 
 jobs:
-  CreateTestApp:
+  CreatePerformanceTestApp:
     runs-on: [ bc-build ]
     steps:
       - name: Checkout
@@ -47,7 +51,7 @@ jobs:
         uses: freddydk/AL-Go-Actions/WorkflowInitialize@main
         with:
           shell: powershell
-          eventId: "DO0095"
+          eventId: "DO0102"
 
       - name: Creating a new test app
         uses: freddydk/AL-Go-Actions/CreateApp@main
@@ -55,11 +59,12 @@ jobs:
           shell: powershell
           parentTelemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}
           project: ${{ github.event.inputs.project }}
-          type: 'Test App'
+          type: 'Performance Test App'
           name: ${{ github.event.inputs.name }}
           publisher: ${{ github.event.inputs.publisher }}
           idrange: ${{ github.event.inputs.idrange }}
           sampleCode: ${{ github.event.inputs.sampleCode }}
+          sampleSuite: ${{ github.event.inputs.sampleSuite }}
           directCommit: ${{ github.event.inputs.directCommit }}
 
       - name: Finalize the workflow
@@ -67,5 +72,5 @@ jobs:
         uses: freddydk/AL-Go-Actions/WorkflowPostProcess@main
         with:
           shell: powershell
-          eventId: "DO0095"
+          eventId: "DO0102"
           telemetryScopeJson: ${{ steps.init.outputs.telemetryScopeJson }}

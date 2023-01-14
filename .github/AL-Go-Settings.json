@@ -1,12 +1,12 @@
-﻿{
-    "type":  "PTE",
-    "templateUrl":  "https://github.com/freddydk/AL-Go-PTE@main",
-    "runs-on":  "bc-build",
-    "updateDependencies":  true,
-    "bcContainerHelperVersion":  "dev",
-    "Environments": [ 
-        "PROD_DE (Production)",
-        "FAT_DE (FAT)",
-        "QA_DE"
-    ]
+{
+  "type": "PTE",
+  "templateUrl": "https://github.com/freddydk/AL-Go-PTE@main",
+  "runs-on": "bc-build",
+  "updateDependencies": true,
+  "bcContainerHelperVersion": "dev",
+  "Environments": [
+    "PROD_DE (Production)",
+    "FAT_DE (FAT)",
+    "QA_DE"
+  ]
 }
