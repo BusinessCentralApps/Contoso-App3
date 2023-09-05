@@ -2,8 +2,8 @@
   "type": "PTE",
   "templateUrl": "https://github.com/freddydk/AL-Go@main",
   "runs-on": "bc-build",
-  "updateDependencies": true,
   "bcContainerHelperVersion": "dev",
+  "licenseFileUrlSecretName": "",
   "Environments": [
     "PROD_DE (Production)",
     "FAT_DE (FAT)",
