@@ -8,5 +8,8 @@
     "PROD_DE (Production)",
     "FAT_DE (FAT)",
     "QA_DE"
+  ],
+  "ExcludeEnvironments": [
+    "QA_DE"
   ]
 }
