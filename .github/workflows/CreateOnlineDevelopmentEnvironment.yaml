@@ -42,7 +42,7 @@ env:
 jobs:
   Initialization:
     needs: [ ]
-    runs-on: [ bc-build ]
+    runs-on: [ windows-latest ]
     outputs:
       deviceCode: ${{ steps.authenticate.outputs.deviceCode }}
       githubRunner: ${{ steps.ReadSettings.outputs.GitHubRunnerJson }}

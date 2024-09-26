@@ -27,7 +27,7 @@ env:
 jobs:
   Initialization:
     needs: [ ]
-    runs-on: [ bc-build ]
+    runs-on: [ windows-latest ]
     outputs:
       environmentsMatrixJson: ${{ steps.DetermineDeploymentEnvironments.outputs.EnvironmentsMatrixJson }}
       environmentCount: ${{ steps.DetermineDeploymentEnvironments.outputs.EnvironmentCount }}
@@ -187,7 +187,7 @@ jobs:
   PostProcess:
     needs: [ Initialization, Deploy ]
     if: always()
-    runs-on: [ bc-build ]
+    runs-on: [ windows-latest ]
     steps:
       - name: Checkout
         uses: actions/checkout@692973e3d937129bcbf40652eb9f2f61becf3332 # v4.1.7

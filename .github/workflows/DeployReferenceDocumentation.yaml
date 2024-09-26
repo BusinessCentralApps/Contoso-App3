@@ -19,7 +19,7 @@ env:
 
 jobs:
   DeployALDoc:
-    runs-on: [ bc-build ]
+    runs-on: [ windows-latest ]
     name: Deploy Reference Documentation
     environment:
       name: github-pages
