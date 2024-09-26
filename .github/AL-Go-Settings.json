@@ -1,8 +1,6 @@
 {
   "type": "PTE",
   "templateUrl": "https://github.com/microsoft/AL-Go-PTE@preview",
-  "runs-on": "bc-build",
-  "bcContainerHelperVersion": "dev",
   "licenseFileUrlSecretName": "",
   "Environments": [
     "PROD_DE (Production)",
